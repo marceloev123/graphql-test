@@ -56,8 +56,8 @@ export const CharacterDetails = ({
 
           <div className="items-start">
             <div className="space-y-1">
-              <p className="text-sm font-medium leading-none">Species</p>
-              <p className="text-sm text-muted-foreground">{data?.species}</p>
+              <p className="text-sm font-medium leading-none">Gender</p>
+              <p className="text-sm text-muted-foreground">{data?.gender}</p>
             </div>
           </div>
 
@@ -76,6 +76,19 @@ export const CharacterDetails = ({
               <p className="text-sm text-muted-foreground">
                 {data?.origin?.name}
               </p>
+            </div>
+          </div>
+
+          <div className="items-start">
+            <div className="space-y-1">
+              <p className="text-sm font-medium leading-none">Episodes</p>
+              <div className="flex flex-col gap-2">
+                {data?.episode.slice(0, 5).map(episode => (
+                  <p className="text-sm text-muted-foreground">
+                    {episode?.name} - {episode?.episode}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </CardContent>
